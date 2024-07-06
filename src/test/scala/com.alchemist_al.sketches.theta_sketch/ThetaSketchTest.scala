@@ -2,7 +2,7 @@ package com.alchemist_al.sketches.theta_sketch
 
 class ThetaSketchTest extends munit.FunSuite {
 
-  test("theta sketch") {
+  test("ThetaSketch") {
     val sketch1 = new ThetaSketch
     val sketch2 = new ThetaSketch
 
