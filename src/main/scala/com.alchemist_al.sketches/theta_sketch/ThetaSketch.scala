@@ -1,5 +1,3 @@
-package `com.alchemist-al.sketches`.theta_sketch
+package com.alchemist_al.sketches.theta_sketch
 
-class ThetaSketch {
-  
-}
+class ThetaSketch {}
