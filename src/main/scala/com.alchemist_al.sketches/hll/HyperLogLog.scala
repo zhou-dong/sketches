@@ -25,21 +25,11 @@ class HyperLogLog(b: Int) {
     val index = hash >>> (Integer.SIZE - b) // hashValue % m
 
     // Determine position of the leftmost 1-bit (position of the most significant bit set to 1)
-    val rank = getRank(hash >>> b)
+    val w = (hash % math.pow(2, Integer.SIZE - b)).toInt | (1 << (b - 1))
+    val rank = Integer.numberOfLeadingZeros(w) + 1
 
     // Update the register with the maximum rank encountered so far
     registers(index) = registers(index).max(rank)
-  }
-
-  def getRank(hashValue: Long): Int = {
-    // Calculate rank: position of the leftmost 1-bit (zero-based index)
-    var rank: Int = 0;
-    var value: Long = hashValue
-    while (value > 0 && (value & 1L) == 0) {
-      value >>= 1
-      rank += 1;
-    }
-    rank + 1;
   }
 
   def estimate: Double = {
