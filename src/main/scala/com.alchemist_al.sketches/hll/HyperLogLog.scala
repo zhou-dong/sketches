@@ -54,7 +54,7 @@ class HyperLogLog(b: Int) {
   def union(other: HyperLogLog): Unit = {
     if (this.m != other.m)
       throw new IllegalArgumentException(
-        "Cannot merge HyperLogLogs with different sizes"
+        "Cannot union HyperLogLogs with different sizes"
       )
     for (i <- registers.indices) {
       registers(i) = registers(i).max(other.registers(i))
