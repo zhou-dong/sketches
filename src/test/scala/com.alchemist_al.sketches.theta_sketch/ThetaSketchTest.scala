@@ -8,8 +8,8 @@ class ThetaSketchTest extends munit.FunSuite {
 
     sketch1.add("java")
     sketch1.add("scala")
-    sketch1.add("goland")
     sketch1.add("rust")
+    sketch1.add("goland")
     sketch1.add("python")
     sketch1.add("haskell")
     sketch1.add("clojure")
